@@ -1,27 +1,26 @@
 ---
-
+import { Image } from "astro:assets";
+import iliyaImage from "../assets/iliya.jpg";
 ---
 
 <section id="profile" class="bg-slate-900 py-16">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div class="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
             <div class="relative">
-                <!-- Placeholder for professional photo -->
+                <!-- Professional photo -->
                 <div
                     class="w-full h-96 bg-gray-700 rounded-lg shadow-lg flex items-center justify-center text-gray-400 overflow-hidden relative group"
                 >
                     <span class="text-xl group-hover:hidden">Iliya Karin</span>
                     <div
-                        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                        class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10"
                     >
-                        <span class="text-white font-medium"
-                            >/src/assets/Iliya.jpg</span
-                        >
+                        <span class="text-white font-medium">Iliya Karin</span>
                     </div>
-                    <img
-                        src="/src/assets/Iliya.jpg"
-                        alt="Professional Photo"
-                        class="w-full h-full object-cover"
+                    <Image
+                        src={iliyaImage}
+                        alt="Iliya Karin - DevSecOps Expert"
+                        class="w-full h-full object-cover absolute inset-0"
                     />
                 </div>
                 <!-- Decorative element -->
@@ -65,7 +64,8 @@
                             class="list-disc list-inside text-gray-400 space-y-1"
                         >
                             <li>
-                                Managed <strong>$460B+</strong> annual turnover projects
+                                Complitly transformed <strong>$460B+</strong> annual
+                                turnover projects
                             </li>
                             <li>
                                 Expertise in Government regulated environments
@@ -84,8 +84,8 @@
                             Delivered solutions for industry giants including <strong
                                 >Goldman Sachs</strong
                             >, <strong>Alliance Insurance</strong>, <strong
-                                >Cambridge Wealth</strong
-                            >, and <strong>Douglas Elliman</strong>.
+                                >Cambridge Invistment Reserch</strong
+                            >, and <strong>Douglas Elliman Realty</strong>.
                         </p>
                     </div>
                 </div>

@@ -1,46 +1,39 @@
-# Astro Starter Kit: Basics
+# Iliya Karin - DevSecOps Consulting Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+This is the source code for my professional consulting landing page, built to showcase my services in DevSecOps, Cloud Infrastructure, and AI Architecture.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Project Overview
 
-## 🚀 Project Structure
+- **Purpose**: Personal portfolio and consulting lead generation.
+- **Tech Stack**: [Astro](https://astro.build), [Tailwind CSS](https://tailwindcss.com).
+- **Deployment**: Automatic deployment to GitHub Pages via GitHub Actions.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Getting Started
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+To run this project locally:
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+1.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-## 🧞 Commands
+2.  **Start the development server**:
+    ```bash
+    npm run dev
+    ```
 
-All commands are run from the root of the project, from a terminal:
+3.  **Build for production**:
+    ```bash
+    npm run build
+    ```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Structure
 
-## 👀 Want to learn more?
+- `src/components/`: Reusable UI components (Hero, Profile, Services, Pricing, Experience).
+- `src/pages/`: Route definitions (Single page `index.astro`).
+- `public/`: Static assets.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Services Listed
+- Security Audits (SOC2, HIPAA)
+- Infrastructure Automation (IaC, CI/CD)
+- On-premise AI Architecture
