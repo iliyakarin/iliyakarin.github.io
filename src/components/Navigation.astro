@@ -95,29 +95,29 @@ import linkedinLogo from "../assets/linkedin-logo.png";
             >
                 <li>
                     <a
-                        href="#"
-                        class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                        aria-current="page">Home</a
+                        href="#home"
+                        class="nav-link block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                        >Home</a
                     >
                 </li>
                 <li>
                     <a
                         href="#services"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                        class="nav-link block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                         >Services</a
                     >
                 </li>
                 <li>
                     <a
                         href="#experience"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                        class="nav-link block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                         >Experience</a
                     >
                 </li>
                 <li>
                     <a
                         href="#contact"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                        class="nav-link block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                         >Contact</a
                     >
                 </li>
@@ -125,3 +125,59 @@ import linkedinLogo from "../assets/linkedin-logo.png";
         </div>
     </div>
 </nav>
+
+<script>
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const activeClasses = [
+        "text-blue-700",
+        "dark:text-blue-500",
+        "md:text-blue-700",
+    ];
+    const inactiveClasses = ["text-gray-900", "dark:text-white"];
+
+    const observerOptions = {
+        root: null,
+        rootMargin: "-10% 0px -80% 0px",
+        threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute("id");
+                navLinks.forEach((link) => {
+                    link.classList.remove(...activeClasses);
+                    link.classList.add(...inactiveClasses);
+                    if (link.getAttribute("href") === `#${id}`) {
+                        link.classList.add(...activeClasses);
+                        link.classList.remove(...inactiveClasses);
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+
+    // Handle initial state if there's a hash
+    window.addEventListener("load", () => {
+        const hash = window.location.hash;
+        if (hash) {
+            const targetLink = document.querySelector(
+                `.nav-link[href="${hash}"]`,
+            );
+            if (targetLink) {
+                navLinks.forEach((link) => {
+                    link.classList.remove(...activeClasses);
+                    link.classList.add(...inactiveClasses);
+                });
+                targetLink.classList.add(...activeClasses);
+                targetLink.classList.remove(...inactiveClasses);
+            }
+        }
+    });
+</script>
