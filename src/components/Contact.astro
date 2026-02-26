@@ -31,10 +31,27 @@
                 style="min-width:320px;height:950px;"
             >
             </div>
-            <script
-                type="text/javascript"
-                src="https://assets.calendly.com/assets/external/widget.js"
-                async></script>
+            <script>
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const script = document.createElement("script");
+                            script.src =
+                                "https://assets.calendly.com/assets/external/widget.js";
+                            script.async = true;
+                            document.body.appendChild(script);
+                            observer.disconnect();
+                        }
+                    });
+                });
+
+                const widget = document.querySelector(
+                    ".calendly-inline-widget",
+                );
+                if (widget) {
+                    observer.observe(widget);
+                }
+            </script>
             <!-- Calendly inline widget end -->
         </div>
 
