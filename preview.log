@@ -3,4 +3,12 @@ Port 4321 is in use, trying another one...
  astro  v5.16.11 ready in 31 ms
 
 ┃ Local    http://localhost:4322/
+
+> zany-zenith@0.0.1 preview
+> astro preview
+
+
+ astro  v5.16.11 ready in 24 ms
+
+┃ Local    http://localhost:4321/
 ┃ Network  use --host to expose
