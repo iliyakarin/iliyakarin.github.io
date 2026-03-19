@@ -115,6 +115,30 @@ const navLinkClasses =
     ];
     const inactiveClasses = ["text-gray-900", "dark:text-white"];
 
+    // Create a Map for O(1) lookup of nav links by section ID
+    const navLinkMap = new Map();
+    navLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (href) {
+            navLinkMap.set(href, link);
+        }
+    });
+
+    let currentActiveLink = null;
+
+    const updateActiveLink = (targetLink) => {
+        if (!targetLink || targetLink === currentActiveLink) return;
+
+        if (currentActiveLink) {
+            currentActiveLink.classList.remove(...activeClasses);
+            currentActiveLink.classList.add(...inactiveClasses);
+        }
+
+        targetLink.classList.add(...activeClasses);
+        targetLink.classList.remove(...inactiveClasses);
+        currentActiveLink = targetLink;
+    };
+
     const observerOptions = {
         root: null,
         rootMargin: "-10% 0px -80% 0px",
@@ -125,14 +149,10 @@ const navLinkClasses =
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute("id");
-                navLinks.forEach((link) => {
-                    link.classList.remove(...activeClasses);
-                    link.classList.add(...inactiveClasses);
-                    if (link.getAttribute("href") === `#${id}`) {
-                        link.classList.add(...activeClasses);
-                        link.classList.remove(...inactiveClasses);
-                    }
-                });
+                const targetLink = navLinkMap.get(`#${id}`);
+                if (targetLink) {
+                    updateActiveLink(targetLink);
+                }
             }
         });
     }, observerOptions);
@@ -145,16 +165,9 @@ const navLinkClasses =
     window.addEventListener("load", () => {
         const hash = window.location.hash;
         if (hash) {
-            const targetLink = document.querySelector(
-                `.nav-link[href="${hash}"]`,
-            );
+            const targetLink = navLinkMap.get(hash);
             if (targetLink) {
-                navLinks.forEach((link) => {
-                    link.classList.remove(...activeClasses);
-                    link.classList.add(...inactiveClasses);
-                });
-                targetLink.classList.add(...activeClasses);
-                targetLink.classList.remove(...inactiveClasses);
+                updateActiveLink(targetLink);
             }
         }
     });
