@@ -145,8 +145,8 @@ const navLinkClasses =
     window.addEventListener("load", () => {
         const hash = window.location.hash;
         if (hash) {
-            const targetLink = document.querySelector(
-                `.nav-link[href="${hash}"]`,
+            const targetLink = Array.from(navLinks).find(
+                (link) => link.getAttribute("href") === hash,
             );
             if (targetLink) {
                 navLinks.forEach((link) => {
