@@ -1,5 +1,25 @@
 ---
 import SocialIcon from "./SocialIcon.astro";
+
+const socialLinks = [
+    {
+        name: "WhatsApp",
+        href: "https://wa.me/66832280608",
+        icon: "whatsapp",
+        color: "bg-[#25D366]",
+        hoverColor: "hover:bg-[#20bd5a]",
+    },
+    {
+        name: "Telegram",
+        href: "https://t.me/iliyakarin",
+        icon: "telegram",
+        color: "bg-[#0088cc]",
+        hoverColor: "hover:bg-[#0077b5]",
+    },
+] as const;
+
+const buttonBaseClass =
+    "flex items-center justify-center w-full sm:w-auto px-6 py-3 text-base font-medium text-white rounded-lg transition-colors shadow-lg";
 ---
 
 <section id="contact" class="bg-slate-800 py-16">
@@ -67,24 +87,19 @@ import SocialIcon from "./SocialIcon.astro";
         <div
             class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12"
         >
-            <a
-                href="https://wa.me/66832280608"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center justify-center w-full sm:w-auto px-6 py-3 text-base font-medium text-white bg-[#25D366] hover:bg-[#20bd5a] rounded-lg transition-colors shadow-lg"
-            >
-                <SocialIcon icon="whatsapp" class="w-6 h-6 mr-2" />
-                WhatsApp
-            </a>
-            <a
-                href="https://t.me/iliyakarin"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="flex items-center justify-center w-full sm:w-auto px-6 py-3 text-base font-medium text-white bg-[#0088cc] hover:bg-[#0077b5] rounded-lg transition-colors shadow-lg"
-            >
-                <SocialIcon icon="telegram" class="w-6 h-6 mr-2" />
-                Telegram
-            </a>
+            {
+                socialLinks.map((link) => (
+                    <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class={`${buttonBaseClass} ${link.color} ${link.hoverColor}`}
+                    >
+                        <SocialIcon icon={link.icon} class="w-6 h-6 mr-2" />
+                        {link.name}
+                    </a>
+                ))
+            }
         </div>
 
         <div class="relative flex py-5 items-center mb-12">
