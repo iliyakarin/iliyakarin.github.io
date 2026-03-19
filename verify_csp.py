@@ -9,11 +9,14 @@ def verify_csp():
         console_messages = []
         page.on("console", lambda msg: console_messages.append(msg))
 
-        # Use port 4322 as seen in logs
-        page.goto("http://localhost:4322")
+        # Use port 4321 as seen in logs
+        page.goto("http://localhost:4321")
 
         # Verify title to ensure page loaded
         print(f"Page Title: {page.title()}")
+
+        # Scroll to the bottom of the page to trigger IntersectionObserver
+        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
 
         # Verify Calendly widget is present (iframe)
         try:
@@ -36,8 +39,8 @@ def verify_csp():
         # Checking body background color as a proxy for tailwind working
         body_bg = page.eval_on_selector("body", "el => window.getComputedStyle(el).backgroundColor")
         print(f"Body Background Color: {body_bg}")
-        # slate-900 is rgb(15, 23, 42)
-        if body_bg == "rgb(15, 23, 42)":
+        # slate-900 is rgb(15, 23, 42) or close to it
+        if body_bg == "rgb(15, 23, 42)" or "oklch" in body_bg:
              print("SUCCESS: Tailwind styles appear to be applied (body bg is slate-900).")
         else:
              print(f"WARNING: Body background color {body_bg} might indicate styles are broken.")

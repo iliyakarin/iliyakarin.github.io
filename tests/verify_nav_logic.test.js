@@ -4,8 +4,8 @@ import assert from 'node:assert';
 import fs from 'node:fs';
 import path from 'node:path';
 
-test('Navigation.astro contains optimized IntersectionObserver logic', () => {
-    const filePath = path.join(process.cwd(), 'src/components/Navigation.astro');
+test('Navigation contains optimized IntersectionObserver logic', () => {
+    const filePath = path.join(process.cwd(), 'public/scripts/navigation.js');
     const content = fs.readFileSync(filePath, 'utf8');
 
     // Check for Map creation
@@ -32,8 +32,8 @@ test('Navigation.astro contains optimized IntersectionObserver logic', () => {
     assert.ok(!callbackBody.includes('navLinks.forEach'), 'Observer callback should not contain O(N) loop');
 });
 
-test('Navigation.astro handle initial hash with optimized logic', () => {
-    const filePath = path.join(process.cwd(), 'src/components/Navigation.astro');
+test('Navigation handle initial hash with optimized logic', () => {
+    const filePath = path.join(process.cwd(), 'public/scripts/navigation.js');
     const content = fs.readFileSync(filePath, 'utf8');
 
     // Check window 'load' event listener
