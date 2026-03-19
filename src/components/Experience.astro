@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import ExperienceItem from "./ExperienceItem.astro";
 import inventLogo from "../assets/invent-logo.webp";
 import vtbLogo from "../assets/vtb-bank-logo.png";
 import nokiaLogo from "../assets/nokia-logo.png";
@@ -21,274 +22,68 @@ import gazpromLogo from "../assets/gazprom-logo.svg";
         </div>
         <div class="relative border-l border-gray-700 ml-3 md:ml-6 space-y-12">
             <!-- Invent -->
-            <div class="ml-6 md:ml-12">
-                <span
-                    class="absolute flex items-center justify-center w-20 h-20 bg-white rounded-full -left-10 ring-8 ring-slate-900 overflow-hidden"
-                >
-                    <Image
-                        src={inventLogo}
-                        alt="Invent Logo"
-                        class="w-16 h-16 object-contain"
-                    />
-                </span>
-                <div
-                    class="p-6 bg-slate-800 rounded-lg border border-gray-700 shadow-md"
-                >
-                    <div
-                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4"
-                    >
-                        <h3 class="text-2xl font-bold text-white">
-                            Director of DevOps
-                        </h3>
-                        <span
-                            class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mt-2 sm:mt-0"
-                            >Oct 2022 – Present</span
-                        >
-                    </div>
-                    <p class="text-lg font-semibold text-gray-300 mb-2">
-                        Invent (Austin, TX)
-                    </p>
-                    <ul
-                        class="list-disc list-inside text-gray-400 space-y-2 mb-4"
-                    >
-                        <li>
-                            Achieved <strong>64%+ annual cloud savings</strong> through
-                            strategic rightsizing and architecture redesign.
-                        </li>
-                        <li>
-                            Reduced environment provisioning time from 3–4 days
-                            to <strong>~1–2 hours</strong> via GitOps & IaC.
-                        </li>
-                        <li>
-                            Designed a <strong
-                                >SOC2-compliant DevSecOps ecosystem</strong
-                            > (SAST/DAST, secrets management, policy-as-code).
-                        </li>
-                        <li>
-                            Scaled a high-performing team of 14 DevOps/SRE
-                            engineers.
-                        </li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >Kubernetes</span
-                        >
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >OpenTelemetry</span
-                        >
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >SOC2</span
-                        >
-                    </div>
-                </div>
-            </div>
+            <ExperienceItem
+                logo={inventLogo}
+                altText="Invent Logo"
+                title="Director of DevOps"
+                date="Oct 2022 – Present"
+                company="Invent (Austin, TX)"
+                bullets={[
+                    "Achieved <strong>64%+ annual cloud savings</strong> through strategic rightsizing and architecture redesign.",
+                    "Reduced environment provisioning time from 3–4 days to <strong>~1–2 hours</strong> via GitOps & IaC.",
+                    "Designed a <strong>SOC2-compliant DevSecOps ecosystem</strong> (SAST/DAST, secrets management, policy-as-code).",
+                    "Scaled a high-performing team of 14 DevOps/SRE engineers."
+                ]}
+                tags={["Kubernetes", "OpenTelemetry", "SOC2"]}
+            />
 
             <!-- Innotech (VTB Bank) -->
-            <div class="ml-6 md:ml-12">
-                <span
-                    class="absolute flex items-center justify-center w-20 h-20 bg-white rounded-full -left-10 ring-8 ring-slate-900 overflow-hidden"
-                >
-                    <Image
-                        src={vtbLogo}
-                        alt="VTB Bank Logo"
-                        class="w-16 h-16 object-contain"
-                    />
-                </span>
-                <div
-                    class="p-6 bg-slate-800 rounded-lg border border-gray-700 shadow-md"
-                >
-                    <div
-                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4"
-                    >
-                        <h3 class="text-2xl font-bold text-white">
-                            Senior DevOps Manager
-                        </h3>
-                        <span
-                            class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mt-2 sm:mt-0"
-                            >Aug 2020 – Oct 2022</span
-                        >
-                    </div>
-                    <p class="text-lg font-semibold text-gray-300 mb-2">
-                        Innotech / VTB Bank
-                    </p>
-                    <ul
-                        class="list-disc list-inside text-gray-400 space-y-2 mb-4"
-                    >
-                        <li>
-                            Led DevOps for a division of <strong
-                                >550+ engineers</strong
-                            > at a bank with <strong
-                                >$460B+ annual turnover</strong
-                            >.
-                        </li>
-                        <li>
-                            Reduced deployment time from hours to minutes using
-                            automated Teamcity with Kotlin DSL auto generated pipelines.
-                        </li>
-                        <li>
-                            Implemented production-grade <strong
-                                >OpenShift</strong
-                            > and microservices infrastructure.
-                        </li>
-                        <li>
-                            Spearheaded observability transformation with
-                            Prometheus, Grafana, and ELK.
-                        </li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >OpenShift</span
-                        >
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >FinTech</span
-                        >
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >Terraform</span
-                        >
-                    </div>
-                </div>
-            </div>
+            <ExperienceItem
+                logo={vtbLogo}
+                altText="VTB Bank Logo"
+                title="Senior DevOps Manager"
+                date="Aug 2020 – Oct 2022"
+                company="Innotech / VTB Bank"
+                bullets={[
+                    "Led DevOps for a division of <strong>550+ engineers</strong> at a bank with <strong>$460B+ annual turnover</strong>.",
+                    "Reduced deployment time from hours to minutes using automated Teamcity with Kotlin DSL auto generated pipelines.",
+                    "Implemented production-grade <strong>OpenShift</strong> and microservices infrastructure.",
+                    "Spearheaded observability transformation with Prometheus, Grafana, and ELK."
+                ]}
+                tags={["OpenShift", "FinTech", "Terraform"]}
+            />
 
             <!-- Nokia -->
-            <div class="ml-6 md:ml-12">
-                <span
-                    class="absolute flex items-center justify-center w-20 h-20 bg-white rounded-full -left-10 ring-8 ring-slate-900 overflow-hidden"
-                >
-                    <Image
-                        src={nokiaLogo}
-                        alt="Nokia Logo"
-                        class="w-16 h-16 object-contain"
-                    />
-                </span>
-                <div
-                    class="p-6 bg-slate-800 rounded-lg border border-gray-700 shadow-md"
-                >
-                    <div
-                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4"
-                    >
-                        <h3 class="text-2xl font-bold text-white">
-                            Principal SRE
-                        </h3>
-                        <span
-                            class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mt-2 sm:mt-0"
-                            >Mar 2019 – Aug 2020</span
-                        >
-                    </div>
-                    <p class="text-lg font-semibold text-gray-300 mb-2">
-                        Nokia
-                    </p>
-                    <ul
-                        class="list-disc list-inside text-gray-400 space-y-2 mb-4"
-                    >
-                        <li>
-                            Led deployment of the <strong
-                                >Nokia IMPACT IoT platform</strong
-                            > for large enterprise/telecom clients.
-                        </li>
-                        <li>
-                            Designed high-availability infrastructure for
-                            geo-distributed environments.
-                        </li>
-                        <li>
-                            Optimized platform scalability for <strong
-                                >millions of connected devices</strong
-                            >.
-                        </li>
-                        <li>
-                            Automated lifecycle management using Ansible and
-                            Python.
-                        </li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >IoT</span
-                        >
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >High Availability</span
-                        >
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >Python</span
-                        >
-                    </div>
-                </div>
-            </div>
+            <ExperienceItem
+                logo={nokiaLogo}
+                altText="Nokia Logo"
+                title="Principal SRE"
+                date="Mar 2019 – Aug 2020"
+                company="Nokia"
+                bullets={[
+                    "Led deployment of the <strong>Nokia IMPACT IoT platform</strong> for large enterprise/telecom clients.",
+                    "Designed high-availability infrastructure for geo-distributed environments.",
+                    "Optimized platform scalability for <strong>millions of connected devices</strong>.",
+                    "Automated lifecycle management using Ansible and Python."
+                ]}
+                tags={["IoT", "High Availability", "Python"]}
+            />
 
             <!-- Gazprom -->
-            <div class="ml-6 md:ml-12">
-                <span
-                    class="absolute flex items-center justify-center w-20 h-20 bg-white rounded-full -left-10 ring-8 ring-slate-900 overflow-hidden"
-                >
-                    <Image
-                        src={gazpromLogo}
-                        alt="Gazprom Logo"
-                        class="w-16 h-16 object-contain"
-                    />
-                </span>
-                <div
-                    class="p-6 bg-slate-800 rounded-lg border border-gray-700 shadow-md"
-                >
-                    <div
-                        class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4"
-                    >
-                        <h3 class="text-2xl font-bold text-white">
-                            Lead DevOps Engineer
-                        </h3>
-                        <span
-                            class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 mt-2 sm:mt-0"
-                            >Jun 2015 – Mar 2019</span
-                        >
-                    </div>
-                    <p class="text-lg font-semibold text-gray-300 mb-2">
-                        Gazprom
-                    </p>
-                    <ul
-                        class="list-disc list-inside text-gray-400 space-y-2 mb-4"
-                    >
-                        <li>
-                            <strong>Re-architected entire infrastructure</strong
-                            > and implemented a 3-2-1 backup strategy for critical
-                            data clusters.
-                        </li>
-                        <li>
-                            World's first integration of <strong
-                                >PureStorage NVMe</strong
-                            > via 10Gb iSCSI with VMware vSphere.
-                        </li>
-                        <li>
-                            Deployed <strong>Thin Client</strong> terminal solutions
-                            to create highly secure, cost-effective workspaces.
-                        </li>
-                        <li>
-                            Implemented complete workspace control and audit
-                            solutions for <strong>government compliance</strong> in
-                            the energy sector.
-                        </li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2">
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >PureStorage NVMe</span
-                        >
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >VMware</span
-                        >
-                        <span
-                            class="text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-900 text-blue-300"
-                            >Governance</span
-                        >
-                    </div>
-                </div>
-            </div>
+            <ExperienceItem
+                logo={gazpromLogo}
+                altText="Gazprom Logo"
+                title="Lead DevOps Engineer"
+                date="Jun 2015 – Mar 2019"
+                company="Gazprom"
+                bullets={[
+                    "<strong>Re-architected entire infrastructure</strong> and implemented a 3-2-1 backup strategy for critical data clusters.",
+                    "World's first integration of <strong>PureStorage NVMe</strong> via 10Gb iSCSI with VMware vSphere.",
+                    "Deployed <strong>Thin Client</strong> terminal solutions to create highly secure, cost-effective workspaces.",
+                    "Implemented complete workspace control and audit solutions for <strong>government compliance</strong> in the energy sector."
+                ]}
+                tags={["PureStorage NVMe", "VMware", "Governance"]}
+            />
 
             <!-- Prior Experience -->
             <div class="ml-6 md:ml-12">
