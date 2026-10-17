@@ -3,11 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll(".nav-link");
 
     const activeClasses = [
-        "text-blue-700",
-        "dark:text-blue-500",
-        "md:text-blue-700",
+        "text-blue-400",
+        "dark:text-blue-400",
+        "md:text-blue-400",
+        "font-semibold",
     ];
-    const inactiveClasses = ["text-gray-900", "dark:text-white"];
+    const inactiveClasses = ["text-gray-300", "dark:text-gray-300"];
 
     // Create a Map for O(1) lookup of nav links by section ID
     const navLinkMap = new Map();

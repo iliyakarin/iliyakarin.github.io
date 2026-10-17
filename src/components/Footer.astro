@@ -2,45 +2,46 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="p-4 bg-slate-900 md:p-8 lg:p-10 border-t border-gray-800">
+<footer class="p-6 bg-slate-950 md:p-10 border-t border-gray-800">
     <div class="mx-auto max-w-screen-xl text-center">
-        <a
-            href="#"
-            class="flex justify-center items-center text-2xl font-semibold text-white"
-        >
-            <span class="text-blue-500 mr-2">●</span>DevSecOps
-        </a>
-        <p class="my-6 text-gray-400">
-            Professional consulting for secure cloud infrastructure and
-            automated delivery pipelines.
+        <div class="flex flex-col items-center justify-center mb-6">
+            <span class="text-xl font-bold tracking-tight text-white">
+                Iliya Karin
+            </span>
+            <span class="text-xs font-semibold text-gray-400 mt-1">
+                Fractional CTO | Head of Platform & AI Infrastructure | Austin, TX
+            </span>
+        </div>
+        <p class="my-4 text-sm text-gray-400 max-w-md mx-auto leading-relaxed">
+            Enterprise-grade cloud optimization, sovereign on-premise AI, and deterministic platform engineering for high-growth tech companies.
         </p>
-        <ul class="flex flex-wrap justify-center items-center mb-6 text-white">
+        <ul class="flex flex-wrap justify-center items-center my-6 text-sm text-gray-300 gap-y-2">
             <li>
-                <a href="#profile" class="mr-4 hover:underline md:mr-6">About</a
-                >
+                <a href="#services" class="mr-6 hover:text-white transition-colors">Services</a>
             </li>
             <li>
-                <a href="#services" class="mr-4 hover:underline md:mr-6"
-                    >Services</a
-                >
+                <a href="#track-record" class="mr-6 hover:text-white transition-colors">Track Record</a>
+            </li>
+            <li>
+                <a href="#expertise" class="mr-6 hover:text-white transition-colors">Expertise</a>
+            </li>
+            <li>
+                <a href="#experience" class="mr-6 hover:text-white transition-colors">Experience (CV)</a>
             </li>
             <li>
                 <a
-                    href="https://www.linkedin.com/in/iliya-karin/recent-activity/all/"
-                    class="mr-4 hover:underline md:mr-6"
-                    >Blog</a
-                >
+                    href="https://www.linkedin.com/in/iliya-karin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mr-6 hover:text-white transition-colors"
+                >LinkedIn</a>
             </li>
             <li>
-                <a href="#contact" class="mr-4 hover:underline md:mr-6"
-                    >Contact</a
-                >
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
             </li>
         </ul>
-        <span class="text-sm text-gray-400 sm:text-center"
-            >© {currentYear}
-            <a href="#" class="hover:underline">DevSecOps™</a>. All Rights
-            Reserved.</span
-        >
+        <div class="text-xs text-gray-500">
+            (c) {currentYear} Iliya Karin. All rights reserved.
+        </div>
     </div>
 </footer>

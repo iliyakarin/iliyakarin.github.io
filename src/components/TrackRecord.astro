@@ -1,0 +1,65 @@
+---
+const metrics = [
+    {
+        stat: "$5M+ Saved",
+        label: "Annual Cloud Spend Eliminated",
+        description: "Achieved through architectural optimization and cloud repatriation."
+    },
+    {
+        stat: "64% OpEx Cut",
+        label: "Monthly Infrastructure Savings",
+        description: "Average reduction in infrastructure bills, including 50% cut in 30 days on Nebius Cloud."
+    },
+    {
+        stat: "SOC2 Type II",
+        label: "Zero Exemptions",
+        description: "Passed audit requirements on the first try in regulated FinTech and Wealth Management environments."
+    },
+    {
+        stat: "99.99% Uptime",
+        label: "Production Resilience",
+        description: "High-load production resilience across banking, IIoT, and data-intensive platforms."
+    },
+    {
+        stat: "3 to 14 Scaled",
+        label: "Engineering Leadership",
+        description: "Built, mentored, and led high-performing DevOps, SRE, and Platform Engineering teams."
+    }
+];
+---
+
+<section id="track-record" class="bg-slate-950 py-16 border-y border-gray-800">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="text-xs font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/80 border border-blue-800/60 px-3 py-1 rounded-full">
+                Proven Track Record
+            </span>
+            <h2 class="text-3xl font-extrabold tracking-tight text-white mt-4 sm:text-4xl">
+                Hard Business Outcomes, Not Theoretical Slides
+            </h2>
+            <p class="text-gray-400 mt-3 text-base sm:text-lg">
+                Deterministic infrastructure results delivered across regulated enterprises and high-growth startups.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {
+                metrics.map((item) => (
+                    <div class="bg-slate-900/90 border border-gray-800 p-6 rounded-xl hover:border-blue-700/50 transition-colors flex flex-col justify-between">
+                        <div>
+                            <div class="text-3xl lg:text-3xl font-extrabold text-blue-400 tracking-tight mb-2">
+                                {item.stat}
+                            </div>
+                            <div class="text-sm font-bold text-white mb-2">
+                                {item.label}
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 leading-relaxed mt-2">
+                            {item.description}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

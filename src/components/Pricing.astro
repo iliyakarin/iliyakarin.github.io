@@ -4,80 +4,96 @@ import iliya2Image from "../assets/iliya2.jpg";
 import PricingCard from "./PricingCard.astro";
 ---
 
-<section id="pricing" class="bg-slate-800 py-16">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-        <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
-                Engagement Packages
+<section id="services" class="bg-slate-900 py-20 border-b border-gray-800">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:px-6">
+        <div class="mx-auto max-w-screen-md text-center mb-12 lg:mb-16">
+            <span class="text-xs font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/80 border border-blue-800/60 px-3 py-1 rounded-full">
+                Productized Engagements
+            </span>
+            <h2 class="mt-4 mb-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                How We Can Work Together
             </h2>
-            <p class="mb-5 font-light text-gray-400 sm:text-xl">
-                Transparent pricing for fixed-scope audits and strategic
-                roadmaps. Custom engagements available.
+            <p class="font-normal text-gray-300 sm:text-lg max-w-2xl mx-auto">
+                Deterministic engagement models designed for US founders, VCs, and technical executives. No open-ended consulting bills or hand-waving presentations.
             </p>
         </div>
+
         <div
-            class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0"
+            class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-8 lg:space-y-0 items-stretch"
         >
-            <!-- Pricing Card 1 -->
+            <!-- Card 1 -->
             <PricingCard
-                title="Security Audit"
-                description="Prevent data loss and PII exposure. Essential for passing heavy client DDQs."
-                price="$5k+"
+                title="Cloud & AI Cost and Security Audit"
+                price="2-Week Sprint"
+                target="Startups and companies bleeding cash on AWS/GCP or commercial AI APIs."
+                description="Rapid diagnostic of your infrastructure spend and threat posture with immediate, high-ROI action items."
                 features={[
-                    "Infrastructure Security Scan",
-                    "SOC2 Gap Analysis",
-                    "Timeline: ~1 Week",
+                    "Deep-dive audit of Kubernetes clusters, cloud resources, and token consumption loops.",
+                    "Identification of security holes, single points of failure, and vendor lock-in risks.",
+                    "Actionable remediation roadmap to cut monthly infrastructure OpEx by 30% to 60% without sacrificing throughput."
                 ]}
+                ctaText="Request an Audit"
+                ctaHref="#contact"
             />
-            <!-- Pricing Card 2 -->
+
+            <!-- Card 2 (Popular) -->
             <PricingCard
-                title="Infra Automation"
-                description="Save countless developer hours, prevent incidents, and focus on code."
-                price="$10k+"
+                title="Sovereign On-Prem AI & Compliance"
+                price="Project-Based"
+                target="Companies needing private AI without data leakage or preparing for enterprise sales."
+                description="Production deployment of dedicated AI models and compliance frameworks built for strict audit readiness."
                 features={[
-                    "Terraform/Ansible Audit",
-                    "CI/CD Optimization Plan",
-                    "Timeline: 1-2 Weeks",
+                    "Migration from overpriced third-party LLM APIs to local, fine-tuned models (vLLM, Ollama, open-weights) on dedicated bare metal or custom GPU clusters.",
+                    "Implementation of Read-Only MCP servers and strict sandbox isolation for AI agents.",
+                    "End-to-end preparation for SOC2 Type II and Zero Trust FinTech-grade compliance."
                 ]}
                 isPopular={true}
+                ctaText="Discuss a Project"
+                ctaHref="#contact"
             />
-            <!-- Pricing Card 3 -->
+
+            <!-- Card 3 -->
             <PricingCard
-                title="AI Architecture"
-                description="On-premise AI audit and strategic roadmap."
-                price="$8k+"
+                title="Fractional CTO & Head of Platform"
+                price="Monthly Retainer"
+                target="Pre-Seed to Series B startups needing senior technical leadership on demand (10-20 hrs/wk)."
+                description="Playing coach executive leadership to build team muscle, establish architecture, and execute roadmaps."
                 features={[
-                    "Hardware/GPU Sizing",
-                    "Privacy & Security Audit",
-                    "Timeline: 2 Weeks",
+                    "Hands-on architectural ownership, technical roadmap execution, and vendor negotiations.",
+                    "Hiring, scaling, and mentoring internal DevOps, SRE, and software engineering teams.",
+                    "Bridging the gap between engineering perfectionism and urgent business velocity for the board and investors."
                 ]}
+                ctaText="Inquire About Availability"
+                ctaHref="#contact"
             />
         </div>
 
-        <!-- Hourly Consult -->
+        <!-- Strategic Advisory & Ad-hoc Consultation -->
         <div
-            class="mt-12 p-8 bg-slate-700 rounded-lg flex flex-col md:flex-row items-center justify-between gap-8"
+            class="mt-12 p-8 bg-slate-950 border border-gray-800 rounded-xl flex flex-col md:flex-row items-center justify-between gap-8"
         >
             <div class="text-left flex-1">
+                <div class="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-blue-400 bg-blue-950/80 px-2.5 py-1 rounded border border-blue-800/60 mb-3">
+                    Advisory & Tactical Deep-Dives
+                </div>
                 <h3 class="text-2xl font-bold text-white mb-2">
-                    Hourly Consultation
+                    Direct Technical & Architectural Advisory
                 </h3>
-                <p class="text-gray-300 mb-4">
-                    Troubleshooting, Architectural Review, Interviewing for your
-                    team.
+                <p class="text-gray-300 mb-4 max-w-2xl leading-relaxed">
+                    Available for incident post-mortems, vendor contract negotiations, technical due diligence for VCs, and hiring interviews for your lead infrastructure engineers.
                 </p>
-                <div class="text-3xl font-bold text-blue-400">
+                <div class="text-2xl font-extrabold text-blue-400">
                     $200 - $450 / hour
                 </div>
-                <p class="text-sm text-gray-400 mt-2">
-                    Rate depends on task complexity and engagement duration.
+                <p class="text-xs text-gray-500 mt-1">
+                    Retainer blocks and advisory agreements tailored to startup stage and urgency.
                 </p>
             </div>
             <div class="flex-shrink-0">
                 <Image
                     src={iliya2Image}
                     alt="Iliya Karin"
-                    class="w-70 h-70 rounded-lg object-cover border-4 border-slate-600 shadow-xl"
+                    class="w-48 h-48 sm:w-56 sm:h-56 rounded-xl object-cover border-2 border-slate-700 shadow-xl"
                 />
             </div>
         </div>
